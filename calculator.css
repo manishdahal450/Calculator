@@ -1,0 +1,129 @@
+/* Body & Background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Calculator Container */
+#calculator {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+}
+
+/* Display */
+#display {
+  width: 100%;
+  padding: 20px;
+  font-size: 32px;
+  text-align: right;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+/* Button Container (grid) */
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Buttons */
+.button {
+  padding: 18px;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    background-color 0.2s;
+  color: #fff;
+  background-color: #3498db;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Special Buttons */
+.button[data-value="C"] {
+  background-color: #e74c3c;
+}
+
+.button[data-value="C"]:hover {
+  background-color: #c0392b;
+}
+
+.button[data-value="="] {
+  background-color: #2ecc71;
+}
+
+.button[data-value="="]:hover {
+  background-color: #27ae60;
+}
+
+.button[data-value="back"] {
+  background-color: #f39c12;
+}
+
+.button[data-value="back"]:hover {
+  background-color: #d35400;
+}
+
+.button[data-value="/"] {
+  background-color: #9b59b6;
+}
+
+.button[data-value="*"],
+.button[data-value="-"],
+.button[data-value="+"] {
+  background-color: #8e44ad;
+}
+
+.button[data-value="/"]:hover,
+.button[data-value="*"]:hover,
+.button[data-value="-"]:hover,
+.button[data-value="+"]:hover {
+  background-color: #732d91;
+}
+
+/* Zero button spans 2 columns */
+.button.zero {
+  grid-column: span 2;
+}
+
+/* Responsive */
+@media screen and (max-width: 350px) {
+  #calculator {
+    width: 90%;
+  }
+  .button {
+    padding: 14px;
+    font-size: 18px;
+  }
+  #display {
+    font-size: 28px;
+    padding: 15px;
+  }
+}
